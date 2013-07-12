@@ -1,6 +1,5 @@
 %h1 Stuffs
 
-attr_accessible :content, :date, :name, :phone, :price
 
 %table
   %tr
@@ -12,8 +11,11 @@ attr_accessible :content, :date, :name, :phone, :price
   - @stuffs.each do |stuff|
     %tr
       %td= stuff.name
-      %td= stuff.content
+      %td
+        =text_area_tag :content, word_wrap(stuff.content, line_width: 8)
       %td= stuff.date
       %td= stuff.phone
       %td= stuff.price
+
+
 
