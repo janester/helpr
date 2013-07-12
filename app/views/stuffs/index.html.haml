@@ -1,0 +1,19 @@
+%h1 Stuffs
+
+attr_accessible :content, :date, :name, :phone, :price
+
+%table
+  %tr
+    %th name
+    %th content
+    %th date
+    %th phone
+    %th price
+  - @stuffs.each do |stuff|
+    %tr
+      %td= stuff.name
+      %td= stuff.content
+      %td= stuff.date
+      %td= stuff.phone
+      %td= stuff.price
+
